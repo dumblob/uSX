@@ -127,8 +127,8 @@ Tag name must conform to the uSX ID specification
 Tags do not have any value.
 Tags are applied to the first non-tag record after the tag specification.
 Binary variant is the same (because the value is anyway empty).
-.std.usx.c.tag.<tag_part0>.<tag_part1>.<...>
-.std.usx.b.tag.<tag_part0>.<tag_part1>.<...>
+`.std.usx.c.tag.<tag_part0>.<tag_part1>.<...>`
+`.std.usx.b.tag.<tag_part0>.<tag_part1>.<...>`
 
 ### .std.msgpack1
 
