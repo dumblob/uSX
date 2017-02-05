@@ -99,36 +99,36 @@ There are two variants of `.std.usx` types: the character-based `.std.usx.c` and
 
 For character-based types, only the "biggest" or most comprehensive ones make sense (e.g. no fixed length ints), but for the binary ones it's vice versa.
 
-FIXME description
-`.std.usx.c.octetstream.<id>`
-FIXME isn't character and binary variant the same in this case?
-`.std.usx.b.octetstream.<id>`
-FIXME define encoding
-`.std.usx.c.bigint.<id>`
-`.std.usx.b.bigint.<id>`
-FIXME define encoding
-`.std.usx.c.bigfloat.<id>`
-`.std.usx.b.bigfloat.<id>`
+* FIXME description
+* `.std.usx.c.octetstream.<id>`
+* FIXME isn't character and binary variant the same in this case?
+* `.std.usx.b.octetstream.<id>`
+* FIXME define encoding
+* `.std.usx.c.bigint.<id>`
+* `.std.usx.b.bigint.<id>`
+* FIXME define encoding
+* `.std.usx.c.bigfloat.<id>`
+* `.std.usx.b.bigfloat.<id>`
 
 #### Compound types
 
 FIXME how should a universal syntax for any compound type look like? To get an overview what's expected, then take a look e.g. at all [Dao built-in types](http://daoscript.org/help/en/dao.type.html ). Don't forget about IDs.
 
-Homogeneous array of either compound types or scalars
-`.std.usx.c.array.`
-Homogeneous map with ID being the key
-`.std.usx.c.map.`
-Homogeneous Map with any compound or scalar type being the key and any compound or scalar type being the value
-`.std.usx.c.anymap.key.`
-`.std.usx.c.anymap.val.`
-Homogeneous set
-`.std.usx.c.set.`
-Tag name must conform to the uSX ID specification
-Tags do not have any value.
-Tags are applied to the first non-tag record after the tag specification.
-Binary variant is the same (because the value is anyway empty).
-`.std.usx.c.tag.<tag_part0>.<tag_part1>.<...>`
-`.std.usx.b.tag.<tag_part0>.<tag_part1>.<...>`
+* Homogeneous array of either compound types or scalars
+* `.std.usx.c.array.`
+* Homogeneous map with ID being the key
+* `.std.usx.c.map.`
+* Homogeneous Map with any compound or scalar type being the key and any compound or scalar type being the value
+* `.std.usx.c.anymap.key.`
+* `.std.usx.c.anymap.val.`
+* Homogeneous set
+* `.std.usx.c.set.`
+* Tag name must conform to the uSX ID specification
+* Tags do not have any value.
+* Tags are applied to the first non-tag record after the tag specification.
+* Binary variant is the same (because the value is anyway empty).
+* `.std.usx.c.tag.<tag_part0>.<tag_part1>.<...>`
+* `.std.usx.b.tag.<tag_part0>.<tag_part1>.<...>`
 
 ### .std.msgpack1
 
@@ -136,13 +136,13 @@ Binary variant is the same (because the value is anyway empty).
 
 #### Scalar types
 
-FIXME description
-`.std.msgpack`
+* FIXME description
+* `.std.msgpack`
 
 #### Compound types
 
-FIXME description
-`.std.msgpack`
+* FIXME description
+* `.std.msgpack`
 
 ### .std.capnproto
 
@@ -150,13 +150,13 @@ FIXME description
 
 #### Scalar types
 
-FIXME description
-`.std.capnproto`
+* FIXME description
+* `.std.capnproto`
 
 #### Compound types
 
-FIXME description
-`.std.capnproto`
+* FIXME description
+* `.std.capnproto`
 
 ### .std.protobuf
 
@@ -164,13 +164,13 @@ FIXME description
 
 #### Scalar types
 
-FIXME description
-`.std.protobuf`
+* FIXME description
+* `.std.protobuf`
 
 #### Compound types
 
-FIXME description
-`.std.protobuf`
+* FIXME description
+* `.std.protobuf`
 
 ## Standard for efficient compression
 
