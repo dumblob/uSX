@@ -49,6 +49,8 @@ The format uses just three characters (`'` `^` `LF`) as delimiters. Any characte
 
 Example valid uSX data:
 ~~~~
+'1.0
+
 .abc.def.var00'a boring one liner
 .variables.must.start.with.a.dot.at.the.beginning'another boring one liner
 
