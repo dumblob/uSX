@@ -33,7 +33,7 @@ Micro Structure eXtensible (uSX) is a well-defined universal markup-like format 
 
 Its goals are easy readability by humans as well as parseability by computers and support for both character-based encodings and binary encodings. It might be also used as a serialization (marshalling) format (efficiency can be as high as with top serialization formats as uSX can easily embed them - see enhancement proposals below). That all while maintaining other qualities like being KISS, quick processing and creation, infinite streams support, interoperability with other formats, extensibility, compatibility with text editors and programming languages, etc.
 
-The uSX **data model** is an unbounded list of records, where each record is a pair of an ID (a key) and a value. Because it's a list, order of the pairs matters and keys can be used more than once with different values.
+The uSX **data model** is an unbounded list of records, where each record is a pair of an ID (a key) and a value. Because it's a list, order of the pairs matters and the identical keys can be used more than once (disregarding the corresponding values).
 
 In this specification, a *character*, an *octet* and an *8bit fixed-sized value* have the same meaning. Valid uSX data must be parseable by an octet-based parser (other than octet-based encodings of characters must conform to this requirement).
 
