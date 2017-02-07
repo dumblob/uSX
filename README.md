@@ -85,7 +85,9 @@ ABC'concatenated content until LF
 .abc.def.var04'last content
 ~~~~
 
-# Enhancements proposals for future versions
+# Enhancements for versions higher than 1.0
+
+Note, uSX 1.0 does not (and will not) have any type information.
 
 All proposals shall be backwards compatible. If you find a use case, which can't be handled easily enough with the current uSX version, then it's a fatal failure of uSX and a new version (potentially incompatible) shall be designed.
 
