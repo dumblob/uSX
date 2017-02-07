@@ -2,7 +2,7 @@
 
 **DO NOT USE THIS YET, IT'S A DRAFT**
 
-Last updated: 2017-02-05 20:49:26 CET
+Last updated: 2017-02-07 14:27:28 CET
 
 <!--
 -ECF extensible configuration format
@@ -31,14 +31,20 @@ CDF comprehensive declarative format
 
 Micro Structure eXtensible (uSX) is a well-defined universal markup-like format for any data block (e.g. a configuration file) or stream (e.g. communication through a socket). Think of it as a counterpart to CommonMark, XML, Java properties, INI, etc. It's suitable for both embedded (including IoT) as well as huge setups (including high performance and databases). It's also perfectly suitable for efficient stream (sequential) processing (there are no global closing tags nor anything similar).
 
-Its goals are easy readability by humans as well as parseability by computers and support for both character-based encodings and binary encodings. It might be also used as a serialization (marshalling) format (efficiency can be as high as with top serialization formats as uSX can easily embed them - see enhancement proposals below).
+Its goals are easy readability by humans as well as parseability by computers and support for both character-based encodings and binary encodings. It might be also used as a serialization (marshalling) format (efficiency can be as high as with top serialization formats as uSX can easily embed them - see enhancement proposals below). That all while maintaining other qualities like being KISS, quick processing and creation, infinite streams support, interoperability with other formats, extensibility, compatibility with text editors and programming languages, etc.
 
-The format uses just three characters (`'` `^` `LF`) as delimiters. Any character might be used as value (there are no requirements on encoding nor anything else) provided the following conditions are met. The data block is seen as a sequence of records. The record might be a one-line record or a multiline record. Each record is identified by an ID, which is a string starting at a new line (optionally indented by `\t` (tabelator) or ` ` (space)) with `.` (dot) followed by a string matching the ERE `[_A-Za-z][_A-Za-z0-9]*([.][_A-Za-z][_A-Za-z0-9]*)*`. For a one-line record, `'` follows, for a multiline record, `^` followed by a *string of maximum of 64 octets* and `LF` follows. For a one-line record any data follow until the first occurence of `LF`. For a multiline record any data follow until the first occurence of `LF` immediately followed by the *string of maximum of 64 octets*. Multiline records can be concatenated with any one-line or multiline record if `'` or `^` respectively are used immediately after the *string of maximum of 64 octets*. Comments are basically records without identification and thus do not start with `.`, but directly with `'` (one-line) or `^` (multiline).
+The uSX **data model** is an unbounded list of records, where each record is a pair of an ID (a key) and a value. Because it's a list, order of the pairs matters and keys can be used more than once with different values.
+
+In this specification, a *character*, an *octet* and an *8bit fixed-sized value* have the same meaning. Valid uSX data must be parseable by an octet-based parser (other than octet-based encodings of characters must conform to this requirement).
+
+The format uses just three characters (`'` `^` `LF`) as delimiters. Any character might be used as value (there are no requirements on encoding nor anything else) provided the following conditions are met.
+
+The data are seen as a sequence of records. The record might be a one-line record or a multiline record. Each record is identified by an ID, which is a string starting at a new line (optionally indented by `\t` (tabelator) or ` ` (space)) with `.` (dot) followed by a string matching the ERE `[_A-Za-z][_A-Za-z0-9]*([.][_A-Za-z][_A-Za-z0-9]*)*`.
+
+For a one-line record, `'` follows, for a multiline record, `^` followed by a *string of maximum of 64 octets* and `LF` follows. For a one-line record any data follow until the first occurence of `LF`. For a multiline record any data follow until the first occurence of `LF` immediately followed by the *string of maximum of 64 octets*. Multiline records can be concatenated with any one-line or multiline record if `'` or `^` respectively are used immediately after the *string of maximum of 64 octets*. Comments are basically records without identification and thus do not start with `.`, but directly with `'` (one-line) or `^` (multiline).
 
 - [BOM](https://en.wikipedia.org/wiki/Byte_order_mark ) is not allowed.
-- The first line of the stream or file must be a comment beginning with the string `<major>.<minor>` specifying the minimum required version of uSX to correctly interpret the data. Note, uSX does not offer any mechanism for a live transition to a newer version of uSX.
-- Order matters.
-- Duplicate IDs are allowed (semantics is implementation and use-case specific).
+- The first line of the stream or file must be a one-line comment beginning with the string `<major>.<minor>` specifying the minimum required version of uSX to correctly interpret the data. Note, uSX does not offer any mechanism for a live transition to a newer version of uSX.
 - Dots are used as visual separators, but have no meaning and are thus fully optional except for the very first dot on a line.
 - `CRLF` is treated as two separate characters and thus only `LF` matters.
 - The prefix matching ERE `^[ \t]*` before an ID or before a comment or before `LF` (i.e. on a blank line) is allowed.
@@ -46,6 +52,7 @@ The format uses just three characters (`'` `^` `LF`) as delimiters. Any characte
 - Implementations shall preserve comments in the AST after parsing (e.g. in case the AST is a tree, comments can be added as children to the last parsed non-comment item or as children of the top-most node or as a preceding sibling of the following node).
 - The prefered file extension is *.usx* (FIXME register it at IANA).
 - It's highly recommended to add a human-readable description of the format of the value of each record (preferably using a formal language) to a comment preceding the record.
+- Users should consider using a short prefix for the set of records they use (the set might be the name of the platform, the name of the application, ...).
 
 Example valid uSX data:
 ~~~~
@@ -191,4 +198,3 @@ Maybe use for these mappings a prefix `.std.<format>.<...>` (e.g. `.std.xml.node
 # Authors
 
 1. **Jan Pacner**, Idego Services Ltd.
-
