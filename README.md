@@ -2,7 +2,7 @@
 
 **DO NOT USE THIS YET, IT'S A DRAFT**
 
-Last updated: 2017-02-07 14:27:28 CET
+Last updated: 2017-02-08 11:36:11 CET
 
 <!--
 -ECF extensible configuration format
@@ -31,7 +31,7 @@ CDF comprehensive declarative format
 
 Micro Structure eXtensible (uSX) is a well-defined universal markup-like format for any data block (e.g. a configuration file) or stream (e.g. communication through a socket). Think of it as a counterpart to CommonMark, XML, Java properties, INI, etc. It's suitable for both embedded (including IoT) as well as huge setups (including high performance and databases). It's also perfectly suitable for efficient stream (sequential) processing (there are no global closing tags nor anything similar).
 
-Its goals are easy readability by humans as well as parseability by computers and support for both character-based encodings and binary encodings. It might be also used as a serialization (marshalling) format (efficiency can be as high as with top serialization formats as uSX can easily embed them - see enhancement proposals below). That all while maintaining other qualities like being KISS, quick processing and creation, infinite streams support, interoperability with other formats, extensibility, compatibility with text editors and programming languages, etc.
+Its goals are easy readability by humans as well as parseability by computers and support for both character-based encodings and binary encodings. It might be also used as a serialization (marshalling) format (efficiency can be as high as with top serialization formats as uSX can easily embed them - see enhancement proposals below). That all while maintaining other qualities like being KISS, quick processing and creation, infinite streams support, interoperability with other formats, extensibility, compatibility with text editors and programming languages, compatibility with Base64 ([RFC 4648](https://tools.ietf.org/html/rfc4648 )), etc.
 
 The uSX **data model** is an unbounded list of records, where each record is a pair of an ID (a key) and a value. Because it's a list, the order of the pairs matters and a key can be used more than once in the list (each time with an arbitrary value). Non-generic (i.e. application-specific) uSX implementations might choose to not allow reuse of keys.
 
