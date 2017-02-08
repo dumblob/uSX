@@ -197,4 +197,4 @@ Maybe use for these mappings a prefix `.std.<format>.<...>` (e.g. `.std.xml.node
 
 # Authors
 
-1. **Jan Pacner**, Idego Services Ltd.
+1. **Jan Pacner**, Idego Global Ltd.
