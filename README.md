@@ -35,7 +35,7 @@ Its goals are easy readability by humans as well as parsability by computers and
 
 The uSX **data model** is an unbounded list of records, where each record is a pair of an ID (a key) and a value. Because it's a list, the order of the pairs matters and a key can be used more than once in the list (each time with an arbitrary value). Non-generic (i.e. application-specific) uSX implementations might choose to not allow reuse of keys.
 
-In this specification, a *character*, an *octet* and an *8bit fixed-sized value* have the same meaning. Valid uSX data must be parsable by an octet-based parser (other than octet-based encodings of characters must conform to this requirement).
+In this specification, a *character*, an *octet* and an *8bit fixed-sized value* have the same meaning. Valid uSX data must be parsable by an **octet-based** parser (other than octet-based encodings of characters **must conform** to this requirement).
 
 The format uses just three characters (`'` `^` `LF`) as delimiters. Any character might be used as value (there are no requirements on encoding nor anything else) provided the following conditions are met.
 
