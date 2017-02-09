@@ -39,7 +39,7 @@ In this specification, a *character*, an *octet* and an *8bit fixed-sized value*
 
 The format uses just three characters (`'` `^` `LF`) as delimiters. Any character might be used as value (there are no requirements on encoding nor anything else) provided the following conditions are met.
 
-The data are seen as a sequence of records. The record might be a one-line record or a multiline record. Each record is identified by an ID, which is a string starting at a new line (optionally indented by `\t` (tabelator) or ` ` (space)) with `.` (dot) followed by a string matching the ERE `[_A-Za-z][_A-Za-z0-9]*([.][_A-Za-z][_A-Za-z0-9]*)*`.
+The data are seen as a sequence of records. The record might be a one-line record or a multiline record. Each record is identified by an ID, which is a string starting at a new line (optionally indented by `\t` (tabelator) or ` ` (space) or their arbitrary combination) with `.` (dot) followed by a string matching the ERE `[_A-Za-z][_A-Za-z0-9]*([.][_A-Za-z][_A-Za-z0-9]*)*`.
 
 For a one-line record, `'` follows, for a multiline record, `^` followed by a *string of maximum of 64 octets* and `LF` follows. For a one-line record any data follow until the first occurence of `LF`. For a multiline record any data follow until the first occurence of `LF` immediately followed by the *string of maximum of 64 octets*. Multiline records can be concatenated with any one-line or multiline record if `'` or `^` respectively are used immediately after the *string of maximum of 64 octets*. Comments are basically records without identification and thus do not start with `.`, but directly with `'` (one-line) or `^` (multiline).
 
