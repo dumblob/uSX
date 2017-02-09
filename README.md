@@ -96,7 +96,7 @@ ABC'concatenated content until LF
 
 Note, uSX 1.0 does not (and will not) have any type information.
 
-All proposals shall be backwards compatible. If you find a use case, which can't be handled easily enough with the current uSX version, then it's a fatal failure of uSX and a new version (potentially incompatible) shall be designed.
+All enhancement proposals shall be backwards compatible. If you find a use case, which can't be handled easily enough with the current uSX version, then it's a fatal failure of uSX and a new version (potentially incompatible) shall be designed.
 
 ## Standard prefixes for common data structures
 
