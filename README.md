@@ -2,7 +2,7 @@
 
 **DO NOT USE THIS YET, IT'S A DRAFT**
 
-Last updated: 2017-02-07 14:27:28 CET
+Last updated: 2017-03-28 20:01:19 UTC+2
 
 <!--
 -ECF extensible configuration format
@@ -62,7 +62,7 @@ Example valid uSX data:
 .variables.must.start.with.a.dot.at.the.beginning'another boring one liner
 
 ' one-line comment after arbitrary number of empty lines
-.dots.are.optional.and.have.no.meaning.but.are.recommended.to.visuall.separate.the.key.into.logical.blocks^LIMITED_LENGTH_STRING_TO_64_CHARACTERS
+.dots.are.optional.and.have.no.meaning.but.are.recommended.to.visually.separate.the.key.into.logical.blocks^LIMITED_LENGTH_STRING_TO_64_CHARACTERS
 some example
 multiline
 content
@@ -81,12 +81,12 @@ concatenated content containing
 END
 in the middle
 ABC^DEF
-yet another content containing
+yet another content, but this time containing
 ABC
 in the middle
 DEF
 
-.pleas.keep.ids.as.short.as.possible^ABC
+.pleas.keep.IDs.as.short.as.possible^ABC
 ABC'concatenated content until LF
 
 .abc.def.var04'last content
